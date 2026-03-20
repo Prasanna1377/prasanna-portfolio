@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@source "../components";
+@source "../app";
+
+:root {
+  --bg: #111111;
+  --fg: #ededed;
+  --muted: #666666;
+  --subtle: #1a1a1a;
+  --border: #222222;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+section {
+  width: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+nav {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.inner {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
