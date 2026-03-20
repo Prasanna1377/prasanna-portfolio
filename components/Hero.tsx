@@ -27,7 +27,7 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        paddingTop: isMobile ? "7rem" : isTablet ? "7.5rem" : "8rem",
+        paddingTop: isMobile ? "7rem" : isTablet ? "6.25rem" : "8rem",
         paddingBottom: isMobile ? "3rem" : "4rem",
       }}
     >
@@ -166,7 +166,7 @@ export default function Hero() {
               style={{
                 width: "100%",
                 maxWidth: isMobile ? "360px" : isTablet ? "380px" : "100%",
-                height: isMobile ? "420px" : isTablet ? "440px" : "600px",
+                height: isMobile ? "420px" : isTablet ? "400px" : "600px",
                 objectFit: "cover",
                 objectPosition: "top center",
                 borderRadius: "12px",
