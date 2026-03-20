@@ -86,7 +86,7 @@ export default function Nav() {
       >
         {!isMobile && (
           <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            {["Work", "Experience", "About", "Contact"].map((link) => (
+            {["Projects", "Experience", "About", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}

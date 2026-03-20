@@ -376,7 +376,7 @@ export default function Work() {
               color: "#ededed",
             }}
           >
-            Featured Work
+            Projects
           </h2>
 
           <p
