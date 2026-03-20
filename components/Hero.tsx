@@ -186,7 +186,7 @@ export default function Hero() {
           display: "inline-flex",
           alignItems: "center",
           gap: "0.5rem",
-          marginTop: isMobile ? "1rem" : "1.25rem",
+          marginTop: isMobile ? "1rem" : isTablet ? "1.5rem" : "2.5rem",
           alignSelf: "center",
           textDecoration: "none",
           color: "#888",
