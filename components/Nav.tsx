@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
 
     const handleResize = () => {
+      setIsTablet(window.innerWidth <= 1024);
       setIsMobile(window.innerWidth <= 768);
     };
 
@@ -84,9 +86,9 @@ export default function Nav() {
           gap: isMobile ? "0.75rem" : "2rem",
         }}
       >
-        {!isMobile && (
+        {!isTablet && (
           <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            {["Projects", "Experience", "About", "Contact"].map((link) => (
+            {["Work", "Experience", "About", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}

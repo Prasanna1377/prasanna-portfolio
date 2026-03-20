@@ -27,7 +27,7 @@ export default function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        paddingTop: isMobile ? "7rem" : "8rem",
+        paddingTop: isMobile ? "7rem" : isTablet ? "7.5rem" : "8rem",
         paddingBottom: isMobile ? "3rem" : "4rem",
       }}
     >
@@ -35,7 +35,7 @@ export default function Hero() {
         style={{
           display: "grid",
           gridTemplateColumns: isTablet ? "1fr" : "1fr 1fr",
-          gap: isMobile ? "2.5rem" : "4rem",
+          gap: isMobile ? "2.5rem" : isTablet ? "2rem" : "4rem",
           alignItems: "center",
           width: "100%",
         }}
@@ -73,7 +73,9 @@ export default function Hero() {
               style={{
                 fontSize: isMobile
                   ? "clamp(3.8rem, 18vw, 5.6rem)"
-                  : "clamp(5rem, 12vw, 14rem)",
+                  : isTablet
+                    ? "clamp(4.5rem, 10vw, 6.5rem)"
+                    : "clamp(5rem, 12vw, 14rem)",
                 fontWeight: 800,
                 lineHeight: 0.88,
                 letterSpacing: "-0.03em",
@@ -85,7 +87,7 @@ export default function Hero() {
             </motion.h1>
           </div>
 
-          <div style={{ marginBottom: isMobile ? "2rem" : "3rem" }}>
+          <div style={{ marginBottom: isMobile ? "2rem" : isTablet ? "2.25rem" : "3rem" }}>
             <motion.h1
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,7 +99,9 @@ export default function Hero() {
               style={{
                 fontSize: isMobile
                   ? "clamp(3.8rem, 18vw, 5.6rem)"
-                  : "clamp(5rem, 12vw, 14rem)",
+                  : isTablet
+                    ? "clamp(4.5rem, 10vw, 6.5rem)"
+                    : "clamp(5rem, 12vw, 14rem)",
                 fontWeight: 800,
                 lineHeight: 0.88,
                 letterSpacing: "-0.03em",
@@ -154,21 +158,21 @@ export default function Hero() {
           }}
         >
           <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-  <Image
-    src="/Headshot.jpeg"
-    alt="Prasanna Pingale"
-    width={800}
-    height={600}
-    style={{
-      width: "100%",
-      maxWidth: isMobile ? "360px" : isTablet ? "460px" : "100%",
-      height: isMobile ? "420px" : isTablet ? "540px" : "600px",
-      objectFit: "cover",
-      objectPosition: "top center",
-      borderRadius: "12px",
-    }}
-  />
-</div>
+            <Image
+              src="/Headshot.jpeg"
+              alt="Prasanna Pingale"
+              width={800}
+              height={600}
+              style={{
+                width: "100%",
+                maxWidth: isMobile ? "360px" : isTablet ? "380px" : "100%",
+                height: isMobile ? "420px" : isTablet ? "440px" : "600px",
+                objectFit: "cover",
+                objectPosition: "top center",
+                borderRadius: "12px",
+              }}
+            />
+          </div>
         </motion.div>
       </div>
 
