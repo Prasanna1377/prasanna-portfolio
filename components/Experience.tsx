@@ -14,7 +14,7 @@ const jobs = [
     bullets: [
       "Defined KPI frameworks for activation, workflow completion, and feature engagement.",
       "Built Power BI dashboards that reduced manual reporting effort by 25%.",
-      "Used SQL and Python to surface usability gaps in pre-production user journeys.",
+      "Used SQL and Python to surface usability gaps in pre production user journeys.",
       "Supported A/B test reviews for UI and workflow changes across product teams.",
       "Partnered with engineering on event tracking validation and instrumentation gaps.",
     ],
@@ -25,8 +25,8 @@ const jobs = [
     period: "Jan 2021 — Jul 2023",
     location: "India",
     impact:
-      "Identified a 30%+ checkout drop-off and shaped product priorities through data.",
-    metric: "30%+ checkout drop-off identified",
+      "Identified a 30%+ checkout drop off and shaped product priorities through data.",
+    metric: "30%+ checkout drop off identified",
     bullets: [
       "Analyzed user, order, and funnel data across web and mobile journeys.",
       "Built cohort and retention analyses revealing repeat behavior patterns.",
@@ -47,33 +47,21 @@ function Job({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [hovered, setHovered] = useState(false);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 26 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      whileHover={!isMobile ? { y: -4 } : undefined}
-      transition={{
-        duration: 0.55,
-        delay: index * 0.07,
-        ease: [0.16, 1, 0.3, 1],
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      transition={{ duration: 0.6, delay: index * 0.08 }}
       style={{
         display: "grid",
         gridTemplateColumns: isMobile ? "1fr" : "300px 1fr",
         gap: isMobile ? "1.5rem" : "2.5rem",
         padding: isMobile ? "1.25rem" : "1.75rem",
-        border: hovered ? "1px solid #2563eb" : "1px solid #222",
+        border: "1px solid #222",
         borderRadius: isMobile ? "14px" : "18px",
-        background: hovered ? "#141414" : "#121212",
-        transition: "all 0.3s ease",
-        boxShadow: hovered
-          ? "0 10px 28px rgba(0,0,0,0.2), 0 0 0 1px rgba(37,99,235,0.08)"
-          : "none",
+        background: "#121212",
       }}
     >
       <div
@@ -132,9 +120,7 @@ function Job({
           </p>
         </div>
 
-        <motion.div
-          animate={{ scale: hovered && !isMobile ? 1.02 : 1 }}
-          transition={{ duration: 0.2 }}
+        <div
           style={{
             display: "inline-flex",
             alignSelf: "flex-start",
@@ -149,7 +135,7 @@ function Job({
           }}
         >
           {job.metric}
-        </motion.div>
+        </div>
       </div>
 
       <div>
@@ -188,9 +174,7 @@ function Job({
                 lineHeight: 1.7,
               }}
             >
-              <motion.span
-                animate={{ scale: hovered && !isMobile ? 1.08 : 1 }}
-                transition={{ duration: 0.2 }}
+              <span
                 style={{
                   width: "7px",
                   height: "7px",
@@ -212,6 +196,7 @@ function Job({
 
 export default function Experience() {
   const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -230,9 +215,8 @@ export default function Experience() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -258,11 +242,10 @@ export default function Experience() {
               fontSize: isMobile ? "0.95rem" : "1rem",
               color: "#7a7a7a",
               lineHeight: 1.7,
-              maxWidth: "760px",
+              maxWidth: "100%",
             }}
           >
-            Experience across product analytics, experimentation, funnel
-            optimization, and release readiness.
+            Experience across product analytics, experimentation, funnel optimization, and release readiness.
           </p>
         </motion.div>
 

@@ -25,7 +25,6 @@ const education = [
 
 export default function Education() {
   const ref = useRef(null);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [isTablet, setIsTablet] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -74,11 +73,10 @@ export default function Education() {
               fontSize: isMobile ? "0.95rem" : "1rem",
               color: "#7a7a7a",
               lineHeight: 1.7,
-              maxWidth: "760px",
+              maxWidth: "100%",
             }}
           >
-            Academic foundation in information systems, engineering, and analytical
-            problem solving.
+            Academic foundation in information systems, engineering, and analytical problem solving.
           </p>
         </motion.div>
 
@@ -95,30 +93,21 @@ export default function Education() {
               key={edu.school}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={!isMobile ? { y: -4 } : undefined}
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.55,
                 delay: index * 0.1,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
               style={{
                 padding: isMobile ? "1.2rem" : "1.75rem",
-                border:
-                  hoveredCard === index ? "1px solid #2563eb" : "1px solid #222",
+                border: "1px solid #222",
                 borderRadius: isMobile ? "14px" : "18px",
                 background: "linear-gradient(180deg, #141414 0%, #101010 100%)",
                 minHeight: isMobile ? "auto" : "240px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
-                transition: "all 0.25s ease",
-                boxShadow:
-                  hoveredCard === index
-                    ? "0 10px 28px rgba(0,0,0,0.18), 0 0 0 1px rgba(37,99,235,0.08)"
-                    : "none",
                 overflow: "hidden",
               }}
             >
@@ -131,9 +120,7 @@ export default function Education() {
                   gap: "1rem",
                 }}
               >
-                <motion.div
-                  animate={{ scale: hoveredCard === index && !isMobile ? 1.04 : 1 }}
-                  transition={{ duration: 0.2 }}
+                <div
                   style={{
                     width: isMobile ? "42px" : "48px",
                     height: isMobile ? "42px" : "48px",
@@ -148,7 +135,7 @@ export default function Education() {
                   }}
                 >
                   <GraduationCap size={isMobile ? 20 : 22} />
-                </motion.div>
+                </div>
 
                 <div
                   style={{

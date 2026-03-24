@@ -76,7 +76,7 @@ export default function Nav() {
           flexShrink: 0,
         }}
       >
-        Prasanna Pingale
+        Prasanna
       </a>
 
       <div
@@ -88,7 +88,7 @@ export default function Nav() {
       >
         {!isTablet && (
           <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            {["Work", "Experience", "About", "Contact"].map((link) => (
+            {["Projects", "Experience", "About", "Contact"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}

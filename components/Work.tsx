@@ -4,70 +4,79 @@ import { motion, useInView } from "framer-motion";
 
 const projects = [
   {
-    id: "01",
     title: "SaaS Churn Prediction and Retention Analysis",
-    subtitle: "How I predicted at-risk accounts before they churned",
-    outcome: "End-to-end churn model built on B2B SaaS data",
-    tags: ["Python", "SQL", "Scikit-learn", "Cohort Analysis", "A/B Testing"],
+    problem:
+      "The team needed earlier visibility into which accounts were most likely to churn instead of reacting after revenue risk had already surfaced.",
+    approach:
+      "Built a churn analysis workflow using behavioral, usage, and account level signals to identify patterns tied to early drop off and declining engagement.",
+    impact:
+      "Created a clearer view of at risk accounts and helped frame retention decisions around measurable product behavior.",
+    tag: "Analysis",
     type: "B2B · SaaS · Predictive Modeling",
     link: "https://github.com/Prasanna1377/SaaS-Churn-Analysis",
     year: "2024 — 2025",
-    featured: true,
     gradient:
-      "linear-gradient(135deg, rgba(37,99,235,0.35) 0%, rgba(15,23,42,0.95) 65%, rgba(10,10,10,1) 100%)",
+      "linear-gradient(135deg, rgba(37,99,235,0.24) 0%, rgba(15,23,42,0.92) 65%, rgba(10,10,10,1) 100%)",
   },
   {
-    id: "02",
     title: "Ecommerce Funnel and Conversion Analysis",
-    subtitle: "How I found where customers were dropping off and why",
-    outcome: "Multi-step funnel breakdown across devices and segments",
-    tags: ["Python", "SQL", "Funnel Analysis", "Segmentation", "Power BI"],
+    problem:
+      "Customers were dropping out across the checkout journey, but the biggest sources of friction were not clearly understood.",
+    approach:
+      "Mapped the funnel across devices, user segments, and journey stages to find where conversion loss was highest and which user groups were most affected.",
+    impact:
+      "Turned a broad conversion problem into specific areas of focus for checkout, messaging, and UX improvement.",
+    tag: "Funnel Analysis",
     type: "B2C · Ecommerce · Funnel Analysis",
     link: "https://github.com/Prasanna1377/ecommerce-funnel-analysis",
-    year: "2024",
-    featured: true,
+    year: "2025",
     gradient:
-      "linear-gradient(135deg, rgba(124,58,237,0.32) 0%, rgba(30,27,75,0.95) 65%, rgba(10,10,10,1) 100%)",
+      "linear-gradient(135deg, rgba(124,58,237,0.22) 0%, rgba(30,27,75,0.92) 65%, rgba(10,10,10,1) 100%)",
   },
   {
-    id: "03",
     title: "Music Re-engagement Analysis",
-    subtitle: "How I identified lapsed users and modeled re-engagement triggers",
-    outcome: "Behavioral segmentation of churned music platform users",
-    tags: ["Python", "Retention Analysis", "Segmentation", "SQL"],
+    problem:
+      "The challenge was understanding which lapsed users were most likely to return and what behavioral signals mattered most.",
+    approach:
+      "Analyzed churned user behavior and built segments around listening patterns, inactivity windows, and re engagement triggers.",
+    impact:
+      "Helped structure retention thinking around user behavior instead of broad assumptions.",
+    tag: "Retention",
     type: "Consumer · Retention · Segmentation",
     link: "https://github.com/Prasanna1377/music-reengagement-analysis",
     year: "2024",
-    featured: false,
     gradient:
-      "linear-gradient(135deg, rgba(5,150,105,0.28) 0%, rgba(6,46,37,0.95) 65%, rgba(10,10,10,1) 100%)",
+      "linear-gradient(135deg, rgba(5,150,105,0.20) 0%, rgba(6,46,37,0.92) 65%, rgba(10,10,10,1) 100%)",
   },
   {
-    id: "04",
     title: "Duolingo Case Study",
-    subtitle: "How I analyzed Duolingo's growth and engagement mechanics",
-    outcome: "Product teardown with metric frameworks and growth analysis",
-    tags: ["Product Analysis", "Growth", "Metrics", "Frameworks"],
-    type: "EdTech · Product Analysis · Growth",
+    problem:
+      "Duolingo’s growth feels simple on the surface, but its retention engine comes from tightly connected product loops and behavior design.",
+    approach:
+      "Broke down the product using engagement, growth, and habit formation frameworks to understand how its mechanics support repeat usage.",
+    impact:
+      "Created a structured product analysis showing how feature design, streak behavior, and motivation loops reinforce retention.",
+    tag: "Case Study",
+    type: "EdTech · Product Analysis",
     link: "https://github.com/Prasanna1377/Duolingo-case-study",
-    year: "2025",
-    featured: false,
+    year: "2026",
     gradient:
-      "linear-gradient(135deg, rgba(217,119,6,0.28) 0%, rgba(69,26,3,0.95) 65%, rgba(10,10,10,1) 100%)",
+      "linear-gradient(135deg, rgba(217,119,6,0.20) 0%, rgba(69,26,3,0.92) 65%, rgba(10,10,10,1) 100%)",
   },
   {
-    id: "05",
     title: "Rocathon Hybrid Search",
-    subtitle:
-      "How I built a hybrid search system combining semantic and keyword retrieval",
-    outcome: "Semantic + keyword hybrid search engine built in Python",
-    tags: ["Python", "NLP", "Search", "Embeddings"],
+    problem:
+      "Semantic search alone was not enough to surface the most useful creator results for real business needs.",
+    approach:
+      "Built a hybrid retrieval approach that combined semantic similarity with keyword based matching to improve relevance and ranking quality.",
+    impact:
+      "Produced a more practical search experience that balanced contextual fit with direct business usefulness.",
+    tag: "Search",
     type: "Search · NLP · Python",
     link: "https://github.com/Prasanna1377/rocathon-hybrid-search",
-    year: "2025",
-    featured: false,
+    year: "2026",
     gradient:
-      "linear-gradient(135deg, rgba(236,72,153,0.24) 0%, rgba(80,7,36,0.95) 65%, rgba(10,10,10,1) 100%)",
+      "linear-gradient(135deg, rgba(236,72,153,0.18) 0%, rgba(80,7,36,0.92) 65%, rgba(10,10,10,1) 100%)",
   },
 ];
 
@@ -92,44 +101,40 @@ function ProjectCard({
       href={project.link}
       target="_blank"
       rel="noopener noreferrer"
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      whileHover={!isMobile ? { y: -4 } : undefined}
       transition={{
-        duration: 0.55,
-        delay: index * 0.07,
+        duration: 0.6,
+        delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1],
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
         display: "grid",
-        gridTemplateColumns: isTablet ? "1fr" : "minmax(260px, 420px) 1fr",
-        gap: isMobile ? "1.25rem" : "2rem",
-        padding: isMobile ? "1.2rem" : project.featured ? "2.25rem" : "2rem",
+        gridTemplateColumns: isTablet ? "1fr" : "290px 1fr",
+        gap: isMobile ? "1rem" : "1.5rem",
+        padding: isMobile ? "1.15rem" : "1.4rem",
         border: hovered ? "1px solid #2563eb" : "1px solid #222",
         borderRadius: isMobile ? "14px" : "18px",
         textDecoration: "none",
-        background: hovered ? "#141414" : "#121212",
+        background: hovered ? "#141414" : "#111111",
         transition: "all 0.28s ease",
         cursor: "pointer",
-        boxShadow: hovered
-          ? "0 10px 30px rgba(0,0,0,0.22), 0 0 0 1px rgba(37,99,235,0.08)"
-          : "none",
       }}
     >
       <div
         style={{
           background: project.gradient,
           borderRadius: isMobile ? "12px" : "14px",
+          minHeight: isMobile ? "170px" : "210px",
+          border: "1px solid rgba(255,255,255,0.05)",
+          overflow: "hidden",
+          padding: isMobile ? "0.95rem" : "1.1rem",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          minHeight: isMobile ? "220px" : project.featured ? "280px" : "250px",
-          border: "1px solid rgba(255,255,255,0.05)",
           position: "relative",
-          overflow: "hidden",
-          padding: isMobile ? "1rem" : "1.2rem",
         }}
       >
         <div
@@ -140,24 +145,21 @@ function ProjectCard({
             gap: "0.75rem",
           }}
         >
-          {project.featured ? (
-            <span
-              style={{
-                fontSize: isMobile ? "0.6rem" : "0.68rem",
-                color: "#f8fafc",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                padding: isMobile ? "0.3rem 0.5rem" : "0.35rem 0.65rem",
-                borderRadius: "999px",
-                background: "rgba(255,255,255,0.08)",
-                border: "1px solid rgba(255,255,255,0.12)",
-              }}
-            >
-              Featured
-            </span>
-          ) : (
-            <span />
-          )}
+          <span
+            style={{
+              fontSize: isMobile ? "0.62rem" : "0.68rem",
+              color: "#f8fafc",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              padding: isMobile ? "0.28rem 0.5rem" : "0.32rem 0.6rem",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.12)",
+              alignSelf: "flex-start",
+            }}
+          >
+            {project.tag}
+          </span>
 
           <span
             style={{
@@ -172,20 +174,29 @@ function ProjectCard({
           </span>
         </div>
 
-        <motion.div
-          animate={{ scale: hovered && !isMobile ? 1.02 : 1 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
+        <div
           style={{
-            fontSize: isMobile ? "4.8rem" : project.featured ? "6.25rem" : "5.5rem",
-            fontWeight: 800,
-            color: "rgba(255,255,255,0.12)",
-            lineHeight: 1,
-            userSelect: "none",
-            letterSpacing: "-0.04em",
+            height: isMobile ? "56px" : "72px",
+            display: "flex",
+            alignItems: "flex-end",
+            gap: "0.45rem",
           }}
         >
-          {project.id}
-        </motion.div>
+          {[26, 42, 35, 58, 44, 72].map((bar, idx) => (
+            <div
+              key={idx}
+              style={{
+                flex: 1,
+                height: `${bar}%`,
+                borderRadius: "6px 6px 3px 3px",
+                background:
+                  idx === 5
+                    ? "linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.22) 100%)"
+                    : "linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 100%)",
+              }}
+            />
+          ))}
+        </div>
 
         <div
           style={{
@@ -196,24 +207,25 @@ function ProjectCard({
         >
           <span
             style={{
-              fontSize: isMobile ? "0.64rem" : "0.72rem",
-              color: "rgba(255,255,255,0.78)",
+              fontSize: isMobile ? "0.64rem" : "0.7rem",
+              color: "rgba(255,255,255,0.8)",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
             }}
           >
-            GitHub Project
+            View Project
           </span>
-          <motion.span
-            animate={{ x: hovered ? 4 : 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
+
+          <span
             style={{
               fontSize: "1rem",
-              color: "rgba(255,255,255,0.78)",
+              color: "rgba(255,255,255,0.8)",
+              transform: hovered ? "translateX(4px)" : "translateX(0px)",
+              transition: "transform 0.25s ease",
             }}
           >
             ↗
-          </motion.span>
+          </span>
         </div>
       </div>
 
@@ -222,7 +234,7 @@ function ProjectCard({
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: isMobile ? "0.85rem" : "1rem",
+          gap: isMobile ? "0.75rem" : "0.85rem",
         }}
       >
         <div
@@ -230,7 +242,7 @@ function ProjectCard({
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
-            gap: "0.75rem",
+            gap: "0.7rem",
           }}
         >
           <span
@@ -244,84 +256,56 @@ function ProjectCard({
           >
             {project.type}
           </span>
-
-          {project.featured && (
-            <span
-              style={{
-                fontSize: isMobile ? "0.62rem" : "0.68rem",
-                color: "#93c5fd",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                border: "1px solid rgba(37,99,235,0.35)",
-                padding: "0.25rem 0.55rem",
-                borderRadius: "999px",
-                background: "rgba(37,99,235,0.08)",
-              }}
-            >
-              Priority Project
-            </span>
-          )}
         </div>
 
         <div>
           <h3
             style={{
-              fontSize: isMobile ? "1.12rem" : project.featured ? "1.5rem" : "1.25rem",
+              fontSize: isMobile ? "1.08rem" : "1.32rem",
               fontWeight: 700,
               color: "#f3f4f6",
-              marginBottom: "0.5rem",
-              lineHeight: 1.25,
+              marginBottom: "0.65rem",
+              lineHeight: 1.28,
               letterSpacing: "-0.02em",
             }}
           >
             {project.title}
           </h3>
 
-          <p
-            style={{
-              fontSize: isMobile ? "0.9rem" : "0.98rem",
-              color: "#9ca3af",
-              lineHeight: 1.65,
-              maxWidth: "900px",
-            }}
-          >
-            {project.subtitle}
-          </p>
-        </div>
-
-        <div
-          style={{
-            fontSize: isMobile ? "0.84rem" : "0.9rem",
-            color: "#d1d5db",
-            padding: isMobile ? "0.8rem 0.9rem" : "0.9rem 1rem",
-            background: "#0d0d0d",
-            borderRadius: "12px",
-            border: "1px solid #1f1f1f",
-            lineHeight: 1.6,
-          }}
-        >
-          {project.outcome}
-        </div>
-
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-          {project.tags.map((tag) => (
-            <motion.span
-              key={tag}
-              whileHover={!isMobile ? { y: -1 } : undefined}
-              transition={{ duration: 0.18 }}
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+            <p
               style={{
-                fontSize: isMobile ? "0.66rem" : "0.72rem",
-                padding: isMobile ? "0.34rem 0.65rem" : "0.38rem 0.75rem",
-                border: "1px solid #2a2a2a",
-                borderRadius: "999px",
-                color: "#a3a3a3",
-                letterSpacing: "0.03em",
-                background: "#111111",
+                fontSize: isMobile ? "0.86rem" : "0.92rem",
+                color: "#d5d8de",
+                lineHeight: 1.7,
               }}
             >
-              {tag}
-            </motion.span>
-          ))}
+              <span style={{ color: "#ededed", fontWeight: 600 }}>Problem: </span>
+              {project.problem}
+            </p>
+
+            <p
+              style={{
+                fontSize: isMobile ? "0.86rem" : "0.92rem",
+                color: "#aab1bd",
+                lineHeight: 1.7,
+              }}
+            >
+              <span style={{ color: "#ededed", fontWeight: 600 }}>What I did: </span>
+              {project.approach}
+            </p>
+
+            <p
+              style={{
+                fontSize: isMobile ? "0.86rem" : "0.92rem",
+                color: "#aab1bd",
+                lineHeight: 1.7,
+              }}
+            >
+              <span style={{ color: "#ededed", fontWeight: 600 }}>Impact: </span>
+              {project.impact}
+            </p>
+          </div>
         </div>
       </div>
     </motion.a>
@@ -330,6 +314,7 @@ function ProjectCard({
 
 export default function Work() {
   const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
   const [isTablet, setIsTablet] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -355,10 +340,9 @@ export default function Work() {
       <div style={{ width: "100%" }}>
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 18 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -383,21 +367,20 @@ export default function Work() {
             style={{
               fontSize: isMobile ? "0.95rem" : "1rem",
               color: "#7a7a7a",
-              lineHeight: 1.7,
-              maxWidth: "760px",
+              lineHeight: 1.75,
+              maxWidth: "100%",
             }}
           >
-            A mix of product analytics, funnel analysis, retention work, and
-            search experimentation built to answer real business questions.
+            A few examples of how I use product analytics, experimentation, and behavioral data to help teams decide what to improve next.
           </p>
         </motion.div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-          {projects.map((p, i) => (
+        <div style={{ display: "flex", flexDirection: "column", gap: "1.35rem" }}>
+          {projects.map((project, index) => (
             <ProjectCard
-              key={p.id}
-              project={p}
-              index={i}
+              key={project.title}
+              project={project}
+              index={index}
               isTablet={isTablet}
               isMobile={isMobile}
             />
