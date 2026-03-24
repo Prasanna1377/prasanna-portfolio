@@ -80,6 +80,376 @@ const projects = [
   },
 ];
 
+function DefaultBarsVisual({ isMobile }: { isMobile: boolean }) {
+  return (
+    <div
+      style={{
+        height: isMobile ? "58px" : "76px",
+        display: "flex",
+        alignItems: "flex-end",
+        gap: "0.45rem",
+      }}
+    >
+      {[24, 38, 30, 52, 40, 68].map((bar, idx) => (
+        <div
+          key={idx}
+          style={{
+            flex: 1,
+            height: `${bar}%`,
+            borderRadius: "8px 8px 4px 4px",
+            background:
+              idx === 5
+                ? "linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.24) 100%)"
+                : "linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 100%)",
+            boxShadow:
+              idx === 5 ? "0 0 18px rgba(255,255,255,0.08)" : "none",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function FunnelVisual({ isMobile }: { isMobile: boolean }) {
+  const levels = [
+    { width: "92%", label: "View" },
+    { width: "72%", label: "Product" },
+    { width: "54%", label: "Cart" },
+    { width: "38%", label: "Checkout" },
+    { width: "24%", label: "Buy" },
+  ];
+
+  return (
+    <div
+      style={{
+        height: isMobile ? "76px" : "96px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        gap: isMobile ? "0.35rem" : "0.45rem",
+      }}
+    >
+      {levels.map((level, idx) => (
+        <div
+          key={level.label}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.45rem",
+          }}
+        >
+          <div
+            style={{
+              width: level.width,
+              height: isMobile ? "8px" : "10px",
+              borderRadius: "999px",
+              background:
+                idx === levels.length - 1
+                  ? "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.34) 100%)"
+                  : "linear-gradient(90deg, rgba(255,255,255,0.66) 0%, rgba(255,255,255,0.16) 100%)",
+              boxShadow:
+                idx === 0 || idx === levels.length - 1
+                  ? "0 0 14px rgba(255,255,255,0.06)"
+                  : "none",
+              flexShrink: 0,
+            }}
+          />
+          <span
+            style={{
+              fontSize: isMobile ? "0.44rem" : "0.5rem",
+              color: "rgba(255,255,255,0.46)",
+              letterSpacing: "0.05em",
+              minWidth: isMobile ? "38px" : "48px",
+              textAlign: "right",
+            }}
+          >
+            {level.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MusicVisual({ isMobile }: { isMobile: boolean }) {
+  const bars = [22, 38, 28, 54, 34, 62, 42, 74, 48, 30];
+
+  return (
+    <div
+      style={{
+        height: isMobile ? "78px" : "102px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "center",
+          marginBottom: isMobile ? "0.2rem" : "0.3rem",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: isMobile ? "30px" : "36px",
+            height: isMobile ? "30px" : "36px",
+            opacity: 0.9,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              left: "13px",
+              top: "2px",
+              width: "4px",
+              height: isMobile ? "18px" : "22px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.88)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              left: "15px",
+              top: "2px",
+              width: isMobile ? "10px" : "12px",
+              height: "4px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.88)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              left: "5px",
+              top: "16px",
+              width: isMobile ? "11px" : "13px",
+              height: isMobile ? "11px" : "13px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.30)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              left: "14px",
+              top: "22px",
+              width: isMobile ? "11px" : "13px",
+              height: isMobile ? "11px" : "13px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.88)",
+              boxShadow: "0 0 14px rgba(255,255,255,0.08)",
+            }}
+          />
+        </div>
+      </div>
+
+      <div
+        style={{
+          height: isMobile ? "46px" : "58px",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.3rem",
+        }}
+      >
+        {bars.map((bar, idx) => (
+          <div
+            key={idx}
+            style={{
+              flex: 1,
+              height: `${bar}%`,
+              borderRadius: "999px",
+              background:
+                idx === 7
+                  ? "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.26) 100%)"
+                  : "linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 100%)",
+              boxShadow:
+                idx === 7 ? "0 0 18px rgba(255,255,255,0.08)" : "none",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DuolingoVisual({ isMobile }: { isMobile: boolean }) {
+  const steps = [28, 40, 36, 54, 46, 68];
+
+  return (
+    <div
+      style={{
+        height: isMobile ? "78px" : "102px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.4rem",
+          marginBottom: isMobile ? "0.2rem" : "0.35rem",
+        }}
+      >
+        {[0, 1, 2, 3].map((idx) => (
+          <div
+            key={idx}
+            style={{
+              width: isMobile ? "14px" : "16px",
+              height: isMobile ? "14px" : "16px",
+              borderRadius: "999px",
+              background:
+                idx === 3
+                  ? "rgba(255,255,255,0.9)"
+                  : idx === 2
+                    ? "rgba(255,255,255,0.5)"
+                    : "rgba(255,255,255,0.18)",
+              boxShadow:
+                idx === 3 ? "0 0 14px rgba(255,255,255,0.08)" : "none",
+            }}
+          />
+        ))}
+      </div>
+
+      <div
+        style={{
+          height: isMobile ? "46px" : "58px",
+          display: "flex",
+          alignItems: "flex-end",
+          gap: "0.35rem",
+        }}
+      >
+        {steps.map((bar, idx) => (
+          <div
+            key={idx}
+            style={{
+              flex: 1,
+              height: `${bar}%`,
+              borderRadius: "9px 9px 4px 4px",
+              background:
+                idx === steps.length - 1
+                  ? "linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.26) 100%)"
+                  : "linear-gradient(180deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 100%)",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SearchVisual({ isMobile }: { isMobile: boolean }) {
+  return (
+    <div
+      style={{
+        height: isMobile ? "78px" : "102px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          marginBottom: isMobile ? "0.2rem" : "0.3rem",
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: isMobile ? "28px" : "34px",
+            height: isMobile ? "28px" : "34px",
+            opacity: 0.88,
+          }}
+        >
+          <div
+            style={{
+              width: isMobile ? "16px" : "20px",
+              height: isMobile ? "16px" : "20px",
+              borderRadius: "999px",
+              border: "2px solid rgba(255,255,255,0.82)",
+              position: "absolute",
+              top: 0,
+              left: 0,
+            }}
+          />
+          <div
+            style={{
+              width: isMobile ? "10px" : "12px",
+              height: "2px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.82)",
+              position: "absolute",
+              top: isMobile ? "15px" : "18px",
+              left: isMobile ? "14px" : "17px",
+              transform: "rotate(45deg)",
+              transformOrigin: "left center",
+            }}
+          />
+        </div>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.45rem",
+          marginTop: "0.2rem",
+        }}
+      >
+        {["88%", "68%", "78%"].map((width, idx) => (
+          <div
+            key={idx}
+            style={{
+              width,
+              height: isMobile ? "8px" : "10px",
+              borderRadius: "999px",
+              background:
+                idx === 0
+                  ? "linear-gradient(90deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.24) 100%)"
+                  : "linear-gradient(90deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.08) 100%)",
+              boxShadow:
+                idx === 0 ? "0 0 16px rgba(255,255,255,0.06)" : "none",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProjectVisual({
+  project,
+  isMobile,
+}: {
+  project: (typeof projects)[0];
+  isMobile: boolean;
+}) {
+  if (project.title === "Ecommerce Funnel and Conversion Analysis") {
+    return <FunnelVisual isMobile={isMobile} />;
+  }
+
+  if (project.title === "Music Re-engagement Analysis") {
+    return <MusicVisual isMobile={isMobile} />;
+  }
+
+  if (project.title === "Duolingo Case Study") {
+    return <DuolingoVisual isMobile={isMobile} />;
+  }
+
+  if (project.title === "Rocathon Hybrid Search") {
+    return <SearchVisual isMobile={isMobile} />;
+  }
+
+  return <DefaultBarsVisual isMobile={isMobile} />;
+}
+
 function ProjectCard({
   project,
   index,
@@ -112,7 +482,7 @@ function ProjectCard({
       onMouseLeave={() => setHovered(false)}
       style={{
         display: "grid",
-        gridTemplateColumns: isTablet ? "1fr" : "290px 1fr",
+        gridTemplateColumns: isTablet ? "1fr" : "320px 1fr",
         gap: isMobile ? "1rem" : "1.5rem",
         padding: isMobile ? "1.15rem" : "1.4rem",
         border: hovered ? "1px solid #2563eb" : "1px solid #222",
@@ -127,10 +497,10 @@ function ProjectCard({
         style={{
           background: project.gradient,
           borderRadius: isMobile ? "12px" : "14px",
-          minHeight: isMobile ? "170px" : "210px",
+          minHeight: isMobile ? "180px" : "210px",
           border: "1px solid rgba(255,255,255,0.05)",
           overflow: "hidden",
-          padding: isMobile ? "0.95rem" : "1.1rem",
+          padding: isMobile ? "1rem" : "1.1rem",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -174,29 +544,7 @@ function ProjectCard({
           </span>
         </div>
 
-        <div
-          style={{
-            height: isMobile ? "56px" : "72px",
-            display: "flex",
-            alignItems: "flex-end",
-            gap: "0.45rem",
-          }}
-        >
-          {[26, 42, 35, 58, 44, 72].map((bar, idx) => (
-            <div
-              key={idx}
-              style={{
-                flex: 1,
-                height: `${bar}%`,
-                borderRadius: "6px 6px 3px 3px",
-                background:
-                  idx === 5
-                    ? "linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.22) 100%)"
-                    : "linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.08) 100%)",
-              }}
-            />
-          ))}
-        </div>
+        <ProjectVisual project={project} isMobile={isMobile} />
 
         <div
           style={{
@@ -333,6 +681,7 @@ export default function Work() {
     <section
       id="work"
       style={{
+        scrollMarginTop: "110px",
         borderTop: "1px solid #222",
         paddingBottom: isMobile ? "3.5rem" : "4.5rem",
       }}

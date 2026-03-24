@@ -49,6 +49,7 @@ export default function About() {
     <section
       id="about"
       style={{
+        scrollMarginTop: "110px",
         paddingBottom: isMobile ? "3rem" : "4rem",
         borderTop: "1px solid #222",
       }}
@@ -64,7 +65,8 @@ export default function About() {
           style={{
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 800,
-            color: "#ededed",
+            color: "#ffffff",
+            margin: 0,
           }}
         >
           About
@@ -80,8 +82,8 @@ export default function About() {
         }}
       >
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
           style={{
@@ -107,53 +109,78 @@ export default function About() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.08 }}
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "1.25rem",
+            gap: "1.4rem",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+  <p
+    style={{
+      fontSize: "0.72rem",
+      color: "#e5e7eb",
+      letterSpacing: "0.14em",
+      textTransform: "uppercase",
+      margin: 0,
+    }}
+  >
+    From behavior to decisions
+  </p>
+
+  <h3
+    style={{
+      fontSize: isMobile ? "1.3rem" : "1.65rem",
+      lineHeight: 1.35,
+      letterSpacing: "-0.02em",
+      color: "#ffffff",
+      fontWeight: 700,
+      margin: 0,
+      maxWidth: "760px",
+    }}
+  >
+    I work at the intersection of data, product thinking, and user behavior.
+  </h3>
+
   <p
     style={{
       fontSize: isMobile ? "0.95rem" : "1rem",
-      color: "#b8bec9",
-      lineHeight: 1.8,
+      color: "#e5e7eb",
+      lineHeight: 1.85,
+      margin: 0,
+      maxWidth: "760px",
     }}
   >
-    Product Analyst working at the intersection of data, product thinking, and user behavior.
+    My focus is on understanding how people move through a product,
+    where friction shows up, and which signals actually matter for
+    better decisions.
   </p>
 
   <p
     style={{
       fontSize: isMobile ? "0.95rem" : "1rem",
-      color: "#b8bec9",
-      lineHeight: 1.8,
+      color: "#e5e7eb",
+      lineHeight: 1.85,
+      margin: 0,
+      maxWidth: "760px",
     }}
   >
-    Focused on understanding how users move through a product, where friction appears, and which signals matter most for decision making.
-  </p>
-
-  <p
-    style={{
-      fontSize: isMobile ? "0.95rem" : "1rem",
-      color: "#b8bec9",
-      lineHeight: 1.8,
-    }}
-  >
-    Turning messy behavioral data into structured insights that teams can act on across conversion, retention, and feature adoption.
+    Whether I am looking at funnel drop off, retention patterns, or
+    feature engagement, I try to turn messy behavior into clear
+    direction teams can act on across conversion, adoption, and
+    product performance.
   </p>
 </div>
 
-          <div style={{ paddingTop: "0.35rem" }}>
+          <div style={{ paddingTop: "0.15rem" }}>
             <p
               style={{
                 fontSize: "0.72rem",
-                color: "#4b5563",
+                color: "#e5e7eb",
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 marginBottom: "0.9rem",
@@ -191,41 +218,59 @@ export default function About() {
 
       <div
         style={{
-          marginTop: isMobile ? "2rem" : "2.5rem",
-          display: "grid",
-          gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
-          gap: "0.75rem",
+          marginTop: isMobile ? "2rem" : "2.75rem",
         }}
       >
-        {[
-          "Decisions over dashboards",
-          "Behavior before metrics",
-          "Clear actions from complexity",
-        ].map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
-            style={{
-              padding: "1rem 1.1rem",
-              border: "1px solid #222",
-              borderRadius: "14px",
-              background: "#111111",
-            }}
-          >
-            <p
+        <p
+          style={{
+            fontSize: "0.72rem",
+            color: "#cbd5e1",
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            marginBottom: "0.9rem",
+          }}
+        >
+          Work philosophy
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+            gap: "0.75rem",
+          }}
+        >
+          {[
+            "Decisions over dashboards",
+            "Behavior over assumptions",
+            "Clarity over complexity",
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
               style={{
-                fontSize: "0.92rem",
-                color: "#d1d5db",
-                lineHeight: 1.6,
+                padding: "1rem 1.1rem",
+                border: "1px solid #222",
+                borderRadius: "14px",
+                background: "#111111",
               }}
             >
-              {item}
-            </p>
-          </motion.div>
-        ))}
+              <p
+                style={{
+                  fontSize: "0.92rem",
+                  color: "#e5e7eb",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}
+              >
+                {item}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
