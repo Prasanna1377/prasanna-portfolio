@@ -252,7 +252,7 @@ export default function Contact() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                ["Location", "Massachusetts, United States"],
+                ["Current Location", "Massachusetts, United States"],
                 [
                   "Target Roles",
                   "Senior Product Analyst, Product Analyst, Business Analyst",
