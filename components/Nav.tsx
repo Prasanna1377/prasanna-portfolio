@@ -2,6 +2,13 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+const navLinks = [
+  { label: "Projects", href: "#work" },
+  { label: "Experience", href: "#experience" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
@@ -88,10 +95,10 @@ export default function Nav() {
       >
         {!isTablet && (
           <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-            {["Projects", "Experience", "About", "Contact"].map((link) => (
+            {navLinks.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 style={{
                   fontSize: "0.8rem",
                   color: "#666",
@@ -106,7 +113,7 @@ export default function Nav() {
                   e.currentTarget.style.color = "#666";
                 }}
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </div>

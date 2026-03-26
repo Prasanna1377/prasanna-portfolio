@@ -58,7 +58,7 @@ const projects = [
       "Created a structured product analysis showing how feature design, streak behavior, and motivation loops reinforce retention.",
     tag: "Case Study",
     type: "EdTech · Product Analysis",
-    link: "https://github.com/Prasanna1377/Duolingo-case-study",
+    link: "https://prasanna1377.github.io/Duolingo-case-study/",
     year: "2026",
     gradient:
       "linear-gradient(135deg, rgba(217,119,6,0.20) 0%, rgba(69,26,3,0.92) 65%, rgba(10,10,10,1) 100%)",
@@ -147,10 +147,6 @@ function FunnelVisual({ isMobile }: { isMobile: boolean }) {
                 idx === levels.length - 1
                   ? "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.34) 100%)"
                   : "linear-gradient(90deg, rgba(255,255,255,0.66) 0%, rgba(255,255,255,0.16) 100%)",
-              boxShadow:
-                idx === 0 || idx === levels.length - 1
-                  ? "0 0 14px rgba(255,255,255,0.06)"
-                  : "none",
               flexShrink: 0,
             }}
           />
@@ -621,46 +617,48 @@ function ProjectCard({
           </h3>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-            <p
-              style={{
-                fontSize: isMobile ? "0.86rem" : "0.92rem",
-                color: "#d5d8de",
-                lineHeight: 1.7,
-              }}
-            >
-              <span style={{ color: "#ededed", fontWeight: 600 }}>Problem: </span>
-              {project.problem}
-            </p>
 
-            <p
-              style={{
-                fontSize: isMobile ? "0.86rem" : "0.92rem",
-                color: "#aab1bd",
-                lineHeight: 1.7,
-              }}
-            >
-              <span style={{ color: "#ededed", fontWeight: 600 }}>What I did: </span>
-              {project.approach}
-            </p>
+  <p
+    style={{
+      fontSize: isMobile ? "0.86rem" : "0.92rem",
+      color: "#d5d8de",
+      lineHeight: 1.7,
+    }}
+  >
+    <span style={{ color: "#ededed", fontWeight: 600 }}>Problem: </span>
+    {project.problem}
+  </p>
 
-            <p
-              style={{
-                fontSize: isMobile ? "0.86rem" : "0.92rem",
-                color: "#aab1bd",
-                lineHeight: 1.7,
-              }}
-            >
-              <span style={{ color: "#ededed", fontWeight: 600 }}>Impact: </span>
-              {project.impact}
-            </p>
-          </div>
+  <p
+    style={{
+      fontSize: isMobile ? "0.86rem" : "0.92rem",
+      color: "#aab1bd",
+      lineHeight: 1.7,
+    }}
+  >
+    <span style={{ color: "#ededed", fontWeight: 600 }}>What I did: </span>
+    {project.approach}
+  </p>
+
+  <p
+    style={{
+      fontSize: isMobile ? "0.86rem" : "0.92rem",
+      color: "#aab1bd",
+      lineHeight: 1.7,
+    }}
+  >
+    <span style={{ color: "#22c55e", fontWeight: 600 }}>Impact: </span>
+    {project.impact}
+  </p>
+
+</div>
         </div>
       </div>
     </motion.a>
   );
 }
 
-export default function Work() {
+export default function Projects() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
   const [isTablet, setIsTablet] = useState(false);
