@@ -20,7 +20,7 @@ Next.js 16, TypeScript, Tailwind CSS v4, Framer Motion
 
 ## Live Site
 
-Coming soon
+https://prasanna-portfolio-inky.vercel.app/
 
 ## Contact
 
