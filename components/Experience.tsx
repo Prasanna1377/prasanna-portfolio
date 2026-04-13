@@ -1,6 +1,30 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useSpring, useTransform } from "framer-motion";
+
+function AnimatedMetric({ text }: { text: string }) {
+  const match = text.match(/^(\d+)(.*)$/);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  
+  const spring = useSpring(0, { duration: 1500, bounce: 0 });
+  const display = useTransform(spring, (current) => Math.floor(current));
+
+  useEffect(() => {
+    if (inView && match) {
+      spring.set(parseInt(match[1]));
+    }
+  }, [inView, match, spring]);
+
+  if (!match) return <span ref={ref}>{text}</span>;
+
+  return (
+    <span ref={ref}>
+      <motion.span>{display}</motion.span>
+      {match[2]}
+    </span>
+  );
+}
 
 const jobs = [
   {
@@ -76,10 +100,12 @@ function Job({
           <p
             style={{
               fontSize: "0.68rem",
-              color: "#6b7280",
+              color: "#9ca3af",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               marginBottom: "0.8rem",
+              fontFamily: "var(--font-geist-mono)",
+              fontWeight: 600,
             }}
           >
             {job.period}
@@ -89,7 +115,7 @@ function Job({
             style={{
               fontSize: isMobile ? "1.15rem" : "1.35rem",
               fontWeight: 700,
-              color: "#ededed",
+              color: "#ffffff",
               marginBottom: "0.35rem",
               lineHeight: 1.25,
             }}
@@ -132,9 +158,11 @@ function Job({
             padding: "0.35rem 0.7rem",
             borderRadius: "999px",
             background: "rgba(37,99,235,0.08)",
+            fontFamily: "var(--font-geist-mono)",
+            fontWeight: 600,
           }}
         >
-          {job.metric}
+          <AnimatedMetric text={job.metric} />
         </div>
       </div>
 
@@ -142,13 +170,13 @@ function Job({
         <div
           style={{
             fontSize: isMobile ? "0.92rem" : "0.98rem",
-            color: "#f3f4f6",
+            color: "#ffffff",
             fontWeight: 500,
             marginBottom: "1.25rem",
             lineHeight: 1.65,
             padding: isMobile ? "0.95rem 1rem" : "1rem 1.1rem",
-            borderLeft: "2px solid #2563eb",
-            background: "#0f0f0f",
+            borderLeft: "2px solid #3b82f6",
+            background: "rgba(59,130,246,0.06)",
             borderRadius: "0 12px 12px 0",
           }}
         >

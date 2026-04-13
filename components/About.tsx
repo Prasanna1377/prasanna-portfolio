@@ -127,6 +127,8 @@ export default function About() {
       letterSpacing: "0.14em",
       textTransform: "uppercase",
       margin: 0,
+      fontFamily: "var(--font-geist-mono)",
+      fontWeight: 600,
     }}
   >
     From behavior to decisions
@@ -184,6 +186,8 @@ export default function About() {
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 marginBottom: "0.9rem",
+                fontFamily: "var(--font-geist-mono)",
+                fontWeight: 600,
               }}
             >
               Stack
@@ -228,6 +232,8 @@ export default function About() {
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             marginBottom: "0.9rem",
+            fontFamily: "var(--font-geist-mono)",
+            fontWeight: 600,
           }}
         >
           Work philosophy

@@ -12,6 +12,9 @@ const projects = [
     impact:
       "Created a clearer view of at risk accounts and helped frame retention decisions around measurable product behavior.",
     tag: "Analysis",
+    tagColor: "rgba(59,130,246,0.15)",
+    tagBorder: "rgba(59,130,246,0.3)",
+    tagText: "#60a5fa",
     type: "B2B · SaaS · Predictive Modeling",
     link: "https://github.com/Prasanna1377/SaaS-Churn-Analysis",
     year: "2024 — 2025",
@@ -27,6 +30,9 @@ const projects = [
     impact:
       "Turned a broad conversion problem into specific areas of focus for checkout, messaging, and UX improvement.",
     tag: "Funnel Analysis",
+    tagColor: "rgba(168,85,247,0.15)",
+    tagBorder: "rgba(168,85,247,0.3)",
+    tagText: "#c084fc",
     type: "B2C · Ecommerce · Funnel Analysis",
     link: "https://github.com/Prasanna1377/ecommerce-funnel-analysis",
     year: "2025",
@@ -42,6 +48,9 @@ const projects = [
     impact:
       "Helped structure retention thinking around user behavior instead of broad assumptions.",
     tag: "Retention",
+    tagColor: "rgba(16,185,129,0.15)",
+    tagBorder: "rgba(16,185,129,0.3)",
+    tagText: "#34d399",
     type: "Consumer · Retention · Segmentation",
     link: "https://github.com/Prasanna1377/music-reengagement-analysis",
     year: "2024",
@@ -57,6 +66,9 @@ const projects = [
     impact:
       "Created a structured product analysis showing how feature design, streak behavior, and motivation loops reinforce retention.",
     tag: "Case Study",
+    tagColor: "rgba(245,158,11,0.15)",
+    tagBorder: "rgba(245,158,11,0.3)",
+    tagText: "#fbbf24",
     type: "EdTech · Product Analysis",
     link: "https://prasanna1377.github.io/Duolingo-case-study/",
     year: "2026",
@@ -72,6 +84,9 @@ const projects = [
     impact:
       "Produced a more practical search experience that balanced contextual fit with direct business usefulness.",
     tag: "Search",
+    tagColor: "rgba(236,72,153,0.15)",
+    tagBorder: "rgba(236,72,153,0.3)",
+    tagText: "#f472b6",
     type: "Search · NLP · Python",
     link: "https://github.com/Prasanna1377/rocathon-hybrid-search",
     year: "2026",
@@ -112,11 +127,11 @@ function DefaultBarsVisual({ isMobile }: { isMobile: boolean }) {
 
 function FunnelVisual({ isMobile }: { isMobile: boolean }) {
   const levels = [
-    { width: "92%", label: "View" },
-    { width: "72%", label: "Product" },
-    { width: "54%", label: "Cart" },
-    { width: "38%", label: "Checkout" },
-    { width: "24%", label: "Buy" },
+    { width: "100%", label: "View" },
+    { width: "78%", label: "Product" },
+    { width: "56%", label: "Cart" },
+    { width: "36%", label: "Checkout" },
+    { width: "20%", label: "Buy" },
   ];
 
   return (
@@ -126,7 +141,8 @@ function FunnelVisual({ isMobile }: { isMobile: boolean }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        gap: isMobile ? "0.35rem" : "0.45rem",
+        gap: isMobile ? "0.35rem" : "0.5rem",
+        paddingRight: "0.5rem"
       }}
     >
       {levels.map((level, idx) => (
@@ -135,28 +151,32 @@ function FunnelVisual({ isMobile }: { isMobile: boolean }) {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.45rem",
+            gap: "0.5rem",
           }}
         >
-          <div
-            style={{
-              width: level.width,
-              height: isMobile ? "8px" : "10px",
-              borderRadius: "999px",
-              background:
-                idx === levels.length - 1
-                  ? "linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.34) 100%)"
-                  : "linear-gradient(90deg, rgba(255,255,255,0.66) 0%, rgba(255,255,255,0.16) 100%)",
-              flexShrink: 0,
-            }}
-          />
+          <div style={{ flex: 1, display: "flex" }}>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: level.width }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: "easeOut" }}
+              style={{
+                height: isMobile ? "8px" : "10px",
+                borderRadius: "999px",
+                background:
+                  idx === levels.length - 1
+                    ? "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 100%)"
+                    : "linear-gradient(90deg, rgba(255,255,255,0.66) 0%, rgba(255,255,255,0.16) 100%)",
+              }}
+            />
+          </div>
           <span
             style={{
-              fontSize: isMobile ? "0.44rem" : "0.5rem",
-              color: "rgba(255,255,255,0.46)",
+              fontSize: isMobile ? "0.5rem" : "0.55rem",
+              color: "rgba(255,255,255,0.6)",
               letterSpacing: "0.05em",
-              minWidth: isMobile ? "38px" : "48px",
-              textAlign: "right",
+              width: "48px",
+              textAlign: "left",
             }}
           >
             {level.label}
@@ -457,9 +477,19 @@ function ProjectCard({
   isTablet: boolean;
   isMobile: boolean;
 }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLAnchorElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [hovered, setHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
 
   return (
     <motion.a
@@ -474,33 +504,48 @@ function ProjectCard({
         delay: index * 0.08,
         ease: [0.16, 1, 0.3, 1],
       }}
+      onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseLeave={() => { setHovered(false); setMousePos({ x: -1000, y: -1000 }); }}
       style={{
         display: "grid",
-        gridTemplateColumns: isTablet ? "1fr" : "320px 1fr",
-        gap: isMobile ? "1rem" : "1.5rem",
-        padding: isMobile ? "1.15rem" : "1.4rem",
-        border: hovered ? "1px solid #2563eb" : "1px solid #222",
-        borderRadius: isMobile ? "14px" : "18px",
+        gridTemplateColumns: isTablet ? "1fr" : "380px 1fr",
+        gap: isMobile ? "1rem" : "2rem",
+        padding: isMobile ? "1.25rem" : "1.75rem",
+        border: hovered ? "1px solid rgba(255,255,255,0.12)" : "1px solid #222",
+        borderRadius: isMobile ? "16px" : "24px",
         textDecoration: "none",
         background: hovered ? "#141414" : "#111111",
-        transition: "all 0.28s ease",
+        boxShadow: hovered ? "0 30px 60px rgba(0,0,0,0.6), inset 0 0 60px rgba(255,255,255,0.02)" : "none",
+        transform: hovered && !isMobile ? "translateY(-4px)" : "translateY(0)",
+        transition: "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
         cursor: "pointer",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      <div 
+        className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-300"
+        style={{
+          opacity: hovered ? 1 : 0,
+          background: `radial-gradient(circle 400px at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.06), transparent 100%)`
+        }} 
+      />
+
       <div
         style={{
           background: project.gradient,
-          borderRadius: isMobile ? "12px" : "14px",
-          minHeight: isMobile ? "180px" : "210px",
+          borderRadius: isMobile ? "12px" : "16px",
+          minHeight: isMobile ? "200px" : "260px",
           border: "1px solid rgba(255,255,255,0.05)",
           overflow: "hidden",
-          padding: isMobile ? "1rem" : "1.1rem",
+          padding: isMobile ? "1.2rem" : "1.5rem",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           position: "relative",
+          zIndex: 10,
+          boxShadow: "inset 0 0 40px rgba(0,0,0,0.2)",
         }}
       >
         <div
@@ -513,15 +558,16 @@ function ProjectCard({
         >
           <span
             style={{
-              fontSize: isMobile ? "0.62rem" : "0.68rem",
-              color: "#f8fafc",
-              letterSpacing: "0.12em",
+              fontSize: "0.68rem",
+              color: project.tagText,
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
-              padding: isMobile ? "0.28rem 0.5rem" : "0.32rem 0.6rem",
+              padding: "0.35rem 0.7rem",
               borderRadius: "999px",
-              background: "rgba(255,255,255,0.08)",
-              border: "1px solid rgba(255,255,255,0.12)",
+              background: project.tagColor,
+              border: "1px solid " + project.tagBorder,
               alignSelf: "flex-start",
+              fontWeight: 600,
             }}
           >
             {project.tag}
@@ -529,11 +575,11 @@ function ProjectCard({
 
           <span
             style={{
-              fontSize: isMobile ? "0.62rem" : "0.68rem",
-              color: "rgba(255,255,255,0.62)",
-              letterSpacing: "0.1em",
+              fontSize: "0.75rem",
+              color: "rgba(255,255,255,0.5)",
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
-              textAlign: "right",
+              fontFamily: "var(--font-geist-mono)",
             }}
           >
             {project.year}
@@ -551,10 +597,11 @@ function ProjectCard({
         >
           <span
             style={{
-              fontSize: isMobile ? "0.64rem" : "0.7rem",
-              color: "rgba(255,255,255,0.8)",
+              fontSize: "0.7rem",
+              color: "rgba(255,255,255,0.7)",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
+              fontWeight: 500,
             }}
           >
             View Project
@@ -562,10 +609,10 @@ function ProjectCard({
 
           <span
             style={{
-              fontSize: "1rem",
-              color: "rgba(255,255,255,0.8)",
-              transform: hovered ? "translateX(4px)" : "translateX(0px)",
-              transition: "transform 0.25s ease",
+              fontSize: "1.1rem",
+              color: "rgba(255,255,255,0.9)",
+              transform: hovered ? "translateX(4px) translateY(-4px)" : "translateX(0px) translateY(0px)",
+              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
           >
             ↗
@@ -578,80 +625,94 @@ function ProjectCard({
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: isMobile ? "0.75rem" : "0.85rem",
+          gap: isMobile ? "1rem" : "1.25rem",
+          padding: isTablet ? "0" : "0.5rem 0",
+          position: "relative",
+          zIndex: 10,
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "0.7rem",
-          }}
-        >
+        <div>
           <span
             style={{
-              fontSize: isMobile ? "0.64rem" : "0.7rem",
-              color: "#2563eb",
-              letterSpacing: "0.12em",
+              fontSize: "0.7rem",
+              color: "#6b7280",
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
               fontWeight: 700,
+              display: "block",
+              marginBottom: "0.8rem",
+              fontFamily: "var(--font-geist-mono)",
             }}
           >
             {project.type}
           </span>
-        </div>
 
-        <div>
           <h3
             style={{
-              fontSize: isMobile ? "1.08rem" : "1.32rem",
-              fontWeight: 700,
-              color: "#f3f4f6",
-              marginBottom: "0.65rem",
-              lineHeight: 1.28,
-              letterSpacing: "-0.02em",
+              fontSize: isMobile ? "1.4rem" : "clamp(1.8rem, 3.5vw, 2.4rem)",
+              fontWeight: 800,
+              color: "#ffffff",
+              marginBottom: "1.5rem",
+              lineHeight: 1.15,
+              letterSpacing: "-0.03em",
             }}
           >
             {project.title}
           </h3>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-
-  <p
-    style={{
-      fontSize: isMobile ? "0.86rem" : "0.92rem",
-      color: "#d5d8de",
-      lineHeight: 1.7,
-    }}
-  >
-    <span style={{ color: "#ededed", fontWeight: 600 }}>Problem: </span>
-    {project.problem}
-  </p>
-
-  <p
-    style={{
-      fontSize: isMobile ? "0.86rem" : "0.92rem",
-      color: "#aab1bd",
-      lineHeight: 1.7,
-    }}
-  >
-    <span style={{ color: "#ededed", fontWeight: 600 }}>What I did: </span>
-    {project.approach}
-  </p>
-
-  <p
-    style={{
-      fontSize: isMobile ? "0.86rem" : "0.92rem",
-      color: "#aab1bd",
-      lineHeight: 1.7,
-    }}
-  >
-    <span style={{ color: "#22c55e", fontWeight: 600 }}>Impact: </span>
-    {project.impact}
-  </p>
-
-</div>
+          <div 
+            style={{ 
+              display: "grid", 
+              gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", 
+              gap: isMobile ? "0.75rem" : "1rem" 
+            }}
+          >
+            {[
+              { label: "Problem", text: project.problem, highlight: "#6b7280" },
+              { label: "Approach", text: project.approach, highlight: "#6b7280" },
+              { label: "Impact", text: project.impact, highlight: "#10b981" }
+            ].map((bento) => (
+              <div 
+                key={bento.label}
+                style={{ 
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(255,255,255,0.04)",
+                  borderRadius: "12px",
+                  padding: "1rem",
+                  display: "flex", 
+                  flexDirection: "column", 
+                  gap: "0.4rem",
+                  transition: "background 0.3s",
+                }}
+              >
+                <span 
+                  style={{ 
+                    fontSize: "0.68rem", 
+                    textTransform: "uppercase", 
+                    letterSpacing: "0.1em", 
+                    color: bento.highlight, 
+                    fontWeight: 700, 
+                    fontFamily: "var(--font-geist-mono)",
+                    background: bento.label === "Impact" ? "rgba(16,185,129,0.1)" : "transparent",
+                    padding: bento.label === "Impact" ? "0.2rem 0.5rem" : "0",
+                    borderRadius: "4px",
+                    width: "fit-content"
+                  }}
+                >
+                  {bento.label}
+                </span>
+                <p
+                  style={{
+                    fontSize: isMobile ? "0.86rem" : "0.9rem",
+                    color: bento.label === "Impact" ? "#ffffff" : "#aab1bd",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {bento.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.a>

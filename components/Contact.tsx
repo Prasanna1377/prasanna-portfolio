@@ -7,6 +7,7 @@ export default function Contact() {
   const ref = useRef(null);
   const [isTablet, setIsTablet] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -113,8 +114,15 @@ export default function Contact() {
                 height: "100%",
               }}
             >
-              <a
-                href="mailto:prasannapingale471@gmail.com"
+              <motion.button
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigator.clipboard.writeText("prasannapingale471@gmail.com");
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -122,24 +130,27 @@ export default function Contact() {
                   gap: "0.75rem",
                   padding: isMobile ? "0.9rem 1.1rem" : "1rem 1.6rem",
                   borderRadius: "999px",
-                  background: "#2563eb",
+                  background: copied ? "#10b981" : "#2563eb",
                   color: "#ffffff",
                   textDecoration: "none",
                   fontSize: isMobile ? "0.82rem" : "0.95rem",
                   fontWeight: 600,
-                  boxShadow: "0 10px 30px rgba(37,99,235,0.18)",
+                  boxShadow: copied ? "0 10px 30px rgba(16,185,129,0.18)" : "0 10px 30px rgba(37,99,235,0.18)",
                   marginBottom: "2rem",
                   width: isMobile ? "100%" : "auto",
                   maxWidth: "100%",
                   textAlign: "center",
                   flexWrap: "wrap",
+                  cursor: "pointer",
+                  border: "none",
+                  transition: "background 0.25s, box-shadow 0.25s",
                 }}
               >
-                <Mail size={isMobile ? 16 : 18} />
-                <span style={{ wordBreak: "break-word" }}>
-                  prasannapingale471@gmail.com
+                {copied ? null : <Mail size={isMobile ? 16 : 18} />}
+                <span style={{ wordBreak: "break-word", fontFamily: copied ? "var(--font-geist-mono)" : "inherit" }}>
+                  {copied ? "Copied to clipboard ✔" : "prasannapingale471@gmail.com"}
                 </span>
-              </a>
+              </motion.button>
 
               <div
                 style={{
