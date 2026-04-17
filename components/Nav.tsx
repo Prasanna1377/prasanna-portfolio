@@ -84,21 +84,61 @@ export default function Nav() {
             "background-color 0.3s ease, backdrop-filter 0.3s ease, border-bottom 0.3s ease, padding 0.3s ease",
         }}
       >
-        <a
-          href="#hero"
-          onClick={handleLinkClick}
-          style={{
-            fontSize: isMobile ? "0.85rem" : "0.95rem",
-            fontWeight: 700,
-            color: "#ededed",
-            textDecoration: "none",
-            letterSpacing: "-0.01em",
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-          }}
-        >
-          Prasanna
-        </a>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <a
+            href="#hero"
+            onClick={handleLinkClick}
+            style={{
+              fontSize: isMobile ? "0.85rem" : "0.95rem",
+              fontWeight: 700,
+              color: "#ededed",
+              textDecoration: "none",
+              letterSpacing: "-0.01em",
+              whiteSpace: "nowrap",
+              flexShrink: 0,
+            }}
+          >
+            Prasanna
+          </a>
+
+          {!isMobile && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                padding: "0.3rem 0.65rem",
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: "999px",
+              }}
+            >
+              <motion.div
+                animate={{ opacity: [1, 0.4, 1] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                style={{
+                  width: "6px",
+                  height: "6px",
+                  borderRadius: "50%",
+                  backgroundColor: "#10b981",
+                  boxShadow: "0 0 8px rgba(16,185,129,0.8)",
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.62rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#aab1bd",
+                  fontFamily: "var(--font-geist-mono)",
+                  fontWeight: 600,
+                }}
+              >
+                System: Active
+              </span>
+            </div>
+          )}
+        </div>
 
         <div
           style={{
