@@ -134,7 +134,7 @@ export default function Nav() {
                   fontWeight: 600,
                 }}
               >
-                System: Active
+                Open to Work
               </span>
             </div>
           )}
