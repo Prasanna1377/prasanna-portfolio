@@ -93,7 +93,7 @@ export default function About() {
           }}
         >
           <Image
-            src="/Headshot.jpeg"
+            src="/LinkedIn-Headshot.png"
             alt="Prasanna Pingale"
             width={420}
             height={520}
