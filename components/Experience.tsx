@@ -50,7 +50,7 @@ const jobs = [
     period: "Jan 2021 — Jul 2023",
     location: "India",
     impact:
-      "Identified a 30%+ checkout drop off and shaped product priorities through data.",
+      "Translated e-commerce user behavior across web and mobile into product decisions that shaped the growth roadmap.",
     metric: "30%+ checkout drop off identified",
     bullets: [
       "Analyzed funnel data across web and mobile, uncovering a 30%+ checkout drop-off that became the top engineering roadmap priority.",
