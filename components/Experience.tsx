@@ -33,7 +33,7 @@ const jobs = [
     period: "May 2025 — Present",
     location: "Massachusetts",
     impact:
-      "Defined OKR-aligned KPI frameworks covering 12+ metrics to support 3 product launches on the Now Platform.",
+      "Turned pre-launch user behavior into measurable product decisions across activation, retention, and feature adoption on the Now Platform.",
     metric: "25% less manual reporting",
     bullets: [
       "Defined 12+ OKR-aligned KPIs across activation, workflow completion, and engagement to support 3 Now Platform product launches.",
