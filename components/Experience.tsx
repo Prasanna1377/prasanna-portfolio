@@ -33,14 +33,15 @@ const jobs = [
     period: "May 2025 — Present",
     location: "Massachusetts",
     impact:
-      "Built the analytics foundation for release readiness across the Now Platform.",
+      "Defined OKR-aligned KPI frameworks covering 12+ metrics to support 3 product launches on the Now Platform.",
     metric: "25% less manual reporting",
     bullets: [
-      "Defined KPI frameworks for activation, workflow completion, and feature engagement.",
-      "Built Power BI dashboards that reduced manual reporting effort by 25%.",
-      "Used SQL and Python to surface usability gaps in pre production user journeys.",
-      "Supported A/B test reviews for UI and workflow changes across product teams.",
-      "Partnered with engineering on event tracking validation and instrumentation gaps.",
+      "Defined OKR-aligned KPI frameworks covering 12+ metrics across activation, workflow completion, and feature engagement to support 3 product launches and enable PMs to own performance tracking on the Now Platform.",
+      "Used SQL and Python to analyze pre-launch user journeys, identifying 4+ recurring friction points across onboarding and feature discovery workflows that were translated into Jira stories for engineering resolution.",
+      "Built 6 Power BI dashboards tracking activation, time to value, retention, and workflow completion, reducing recurring manual reporting effort by 25% and improving release metric visibility for cross-functional teams.",
+      "Led A/B test reviews across 5+ UI and workflow experiments, comparing user segment behavior and trend lines to give product teams a structured framework for evaluating feature changes before broader rollout.",
+      "Partnered with engineering on event tracking instrumentation across environments, validating schema consistency and closing instrumentation gaps to improve confidence in product reporting accuracy.",
+      "Partnered with product, UX, QA, and data engineering to align analytics with roadmap priorities, directly informing feature prioritization decisions and driving data-backed release planning across upcoming Now Platform launches.",
     ],
   },
   {
@@ -52,10 +53,12 @@ const jobs = [
       "Identified a 30%+ checkout drop off and shaped product priorities through data.",
     metric: "30%+ checkout drop off identified",
     bullets: [
-      "Analyzed user, order, and funnel data across web and mobile journeys.",
-      "Built cohort and retention analyses revealing repeat behavior patterns.",
-      "Segmented performance by city tier, device type, and payment method.",
-      "Evaluated merchandising and UX experiments to guide scaling decisions.",
+      "Analyzed user, order, and funnel data across web and mobile journeys, identifying a checkout to payment drop off of over 30% that became a top product roadmap priority for the engineering team.",
+      "Evaluated 8+ merchandising and UX experiments across banners, cart nudges, and delivery messaging, identifying higher converting variants and contributing to a 12% lift in checkout conversion.",
+      "Built cohort and retention analyses across 5+ customer segments, revealing stronger repeat behavior among high frequency users and guiding pricing strategy and feature prioritization for the growth roadmap.",
+      "Segmented performance across 3 city tiers, device types, and payment methods to surface regional differences in repeat purchase behavior, giving stakeholders clearer visibility into product-market fit across markets.",
+      "Reviewed fulfillment timestamps across 100+ store locations to pinpoint operational bottlenecks, connecting delivery delays averaging 20%+ above SLA to customer drop-off trends at the order completion stage.",
+      "Partnered with product managers, operations, and engineering to validate tracking, refine product hypotheses, and translate findings into roadmap-ready recommendations that accelerated sprint prioritization.",
     ],
   },
 ];
