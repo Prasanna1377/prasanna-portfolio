@@ -33,7 +33,7 @@ export default function Contact() {
     },
     {
       label: "Resume",
-      href: "https://drive.google.com/file/d/19ROMh7uBm6QK5K18eXsRUqSR9JNvK61Z/view",
+      href: "https://drive.google.com/file/d/1cy3InfnwCG4hWoGI-em-hwP5XcpEzgnB/view?usp=sharing",
       icon: FileText,
     },
   ];

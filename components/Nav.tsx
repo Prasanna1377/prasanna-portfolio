@@ -177,7 +177,7 @@ export default function Nav() {
           {/* Resume button — always visible */}
           {!isTablet && (
             <a
-              href="https://drive.google.com/file/d/19ROMh7uBm6QK5K18eXsRUqSR9JNvK61Z/view"
+              href="https://drive.google.com/file/d/1cy3InfnwCG4hWoGI-em-hwP5XcpEzgnB/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -318,7 +318,7 @@ export default function Nav() {
             ))}
 
             <a
-              href="https://drive.google.com/file/d/19ROMh7uBm6QK5K18eXsRUqSR9JNvK61Z/view"
+              href="https://drive.google.com/file/d/1cy3InfnwCG4hWoGI-em-hwP5XcpEzgnB/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}
