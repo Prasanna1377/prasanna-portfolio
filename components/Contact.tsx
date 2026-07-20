@@ -23,7 +23,7 @@ export default function Contact() {
   const socialLinks = [
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/prasannapingale/",
+      href: "https://www.linkedin.com/in/prasanna-p-1b9190421/",
       icon: Linkedin,
     },
     {
@@ -33,7 +33,7 @@ export default function Contact() {
     },
     {
       label: "Resume",
-      href: "https://drive.google.com/file/d/1cy3InfnwCG4hWoGI-em-hwP5XcpEzgnB/view?usp=sharing",
+      href: "https://drive.google.com/file/d/1FUNtfY8N53f9K5ba24XhC_4Oa8yHYeDN/view?usp=drive_link",
       icon: FileText,
     },
   ];
@@ -75,7 +75,7 @@ export default function Contact() {
               maxWidth: "760px",
             }}
           >
-            I&apos;m always open to conversations around product, analytics, and building better user experiences.
+            I&apos;m always open to conversations around project delivery, product strategy, and data-driven decision-making.
           </p>
         </motion.div>
 
@@ -272,7 +272,7 @@ export default function Contact() {
                 ["Current Location", "Massachusetts, United States"],
                 [
                   "Target Roles",
-                  "Senior Product Analyst, Product Analyst, Business Analyst",
+                  "Technical Project Manager, Project Manager, Business Analyst",
                 ],
                 ["Work Style", "Remote, Hybrid, & Open to relocate"],
               ].map(([label, value]) => (
