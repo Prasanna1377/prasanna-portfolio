@@ -779,7 +779,7 @@ export default function Projects() {
               maxWidth: "100%",
             }}
           >
-            A few examples of how I use product analytics, experimentation, and behavioral data to help teams decide what to improve next.
+            A few examples of how I apply data analysis, product thinking, and structured problem-solving to inform delivery and product decisions.
           </p>
         </motion.div>
 

@@ -28,37 +28,66 @@ function AnimatedMetric({ text }: { text: string }) {
 
 const jobs = [
   {
-    company: "ServiceNow",
-    role: "Product Analyst",
-    period: "May 2025 — Present",
-    location: "Massachusetts",
+    company: "Responsible Systems",
+    role: "Technical Project Manager",
+    period: "Jun 2026 — Present",
+    location: "Remote, London, UK · Contract",
     impact:
-      "Turned pre-launch user behavior into measurable product decisions across activation, retention, and feature adoption on the Now Platform.",
-    metric: "25% less manual reporting",
+      "Coordinating delivery across cloud infrastructure, AI engineering, and governance workstreams for an AI accountability platform.",
+    metric: "8 workstreams tracked",
     bullets: [
-      "Defined 12+ OKR-aligned KPIs across activation, workflow completion, and engagement to support 3 Now Platform product launches.",
-      "Surfaced 4+ onboarding friction points from pre-launch journey analysis, each translated directly into engineering Jira stories.",
-      "Built 6 Power BI dashboards covering activation through retention, cutting recurring manual reporting effort by 25%.",
-      "Led 5+ A/B test reviews across UI and workflow experiments, giving product teams a consistent framework for evaluating feature changes.",
-      "Owned event tracking instrumentation with engineering, closing schema gaps that improved confidence in product reporting.",
-      "Drove analytics alignment across product, UX, QA, and data engineering to directly shape feature prioritization and release planning.",
+      "Orchestrated delivery across cloud infrastructure, platform development, AI engineering, and governance workstreams, giving the CTO and Tech Lead a single view of priorities, dependencies, and risks.",
+      "Built Jira-based tracking for 8 active workstreams, making ownership, deadlines, and blockers consistently visible to engineering and senior leadership.",
+      "Coordinated AWS multi-region consolidation across London, Mumbai, and Ohio into EU-West, tracking migration dependencies and surfacing risks before they delayed delivery.",
+      "Partnered with the CTO, Tech Lead, and founder to facilitate standups, workshops, and roadmap execution across a distributed engineering team.",
+      "Supported ISO 27001 readiness and internal audit through Vanta by tracking evidence, remediation actions, and control ownership across active governance requirements.",
     ],
   },
   {
-    company: "Orion Technolab",
-    role: "Product Analyst",
-    period: "Jan 2021 — Jul 2023",
-    location: "India",
+    company: "Rebecca Everlene Trust Company",
+    role: "Project Manager",
+    period: "Sep 2025 — Jun 2026",
+    location: "Boston, MA",
     impact:
-      "Translated e-commerce user behavior across web and mobile into product decisions that shaped the growth roadmap.",
-    metric: "30%+ checkout drop off identified",
+      "Managed delivery of a four-program learning suite, coordinating a cross-functional content team from build through structured handover.",
+    metric: "108 modules shipped",
     bullets: [
-      "Analyzed funnel data across web and mobile, uncovering a 30%+ checkout drop-off that became the top engineering roadmap priority.",
-      "Executed 8+ UX and merchandising experiments, identifying winning variants that drove a 12% lift in checkout conversion.",
-      "Developed cohort analyses across 5+ segments, surfacing high-frequency user patterns that shaped pricing and growth roadmap decisions.",
-      "Segmented performance across 3 city tiers, device types, and payment methods to expose regional product-market fit gaps.",
-      "Audited fulfillment data across 100+ locations, linking 20%+ SLA delays to order-stage customer drop-off.",
-      "Orchestrated cross-functional sessions with product, ops, and engineering to turn data findings into sprint-ready roadmap recommendations.",
+      "Managed delivery of the BIG Program Suite across four self-paced learning programs, coordinating an eight-person cross-functional content team in an Agile, board-driven workflow.",
+      "Configured 13 Monday.com boards to structure task ownership, delivery tracking, and status visibility across the Unequivocally BIG workstream.",
+      "Drove day-to-day content team alignment through Slack, keeping three programs in active build on track across content, design, and review handoffs.",
+      "Shipped 108 learning modules across three programs for Google Classroom delivery, plus three program syllabi and three moderator handbooks.",
+      "Authored the BIG Program Suite Master Brief as the single source of truth and led a structured KT-HO handover covering platform access, board links, and all deliverables.",
+    ],
+  },
+  {
+    company: "Sankey Solutions",
+    role: "Business Analyst",
+    period: "Jan 2021 — Jul 2023",
+    location: "Thane, Maharashtra, India",
+    impact:
+      "Translated business needs into structured requirements and analytics for a retail data platform, reducing rework and replacing manual reporting.",
+    metric: "12 hrs saved monthly",
+    bullets: [
+      "Translated 15–20 business needs into BRDs, FRDs, user stories, acceptance criteria, and UAT scenarios, reducing repeated clarification and rework during delivery.",
+      "Evaluated Power BI against Tableau for an Azure-based retail client and drove Power BI adoption, citing native Azure integration and lower licensing cost.",
+      "Cleaned 104,000 CRM and sales records using SQL and Power Query, giving sales and marketing teams reliable lead and pipeline data.",
+      "Consolidated data from five sources into six Power BI dashboards, replacing manual reporting and saving 12 hours a month.",
+      "Maintained a Jira backlog of 40 stories across two-week sprints and coordinated 25 UAT scenarios across four release cycles, catching data mapping and workflow gaps before production.",
+    ],
+  },
+  {
+    company: "Prijai Heat Exchangers",
+    role: "Operations Analyst",
+    period: "Jan 2020 — Dec 2020",
+    location: "Mumbai, Maharashtra, India",
+    impact:
+      "Brought structure to manufacturing operations data, replacing fragmented spreadsheets with consistent reporting across production, inventory, and finance.",
+    metric: "3 teams aligned",
+    bullets: [
+      "Integrated production, inventory, and WIP data from BaaN ERP into Power BI reports, replacing fragmented spreadsheets with a consistent view of manufacturing operations.",
+      "Reconciled ERP records with production, inventory, and finance teams, resolving stock and work-order mismatches before monthly management reviews.",
+      "Automated recurring production and inventory reports using SQL Server and Power BI, reducing the manual effort required for operational updates.",
+      "Analyzed work-in-progress across manufacturing stages and prepared forecast-versus-actual reports to flag delayed orders and production bottlenecks.",
     ],
   },
 ];
@@ -276,7 +305,7 @@ export default function Experience() {
               maxWidth: "100%",
             }}
           >
-            Experience across product analytics, experimentation, funnel optimization, and release readiness.
+            Experience across Agile project delivery, business analysis, requirements management, and cross-functional coordination.
           </p>
         </motion.div>
 

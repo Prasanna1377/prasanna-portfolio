@@ -60,7 +60,7 @@ export default function Hero() {
             marginBottom: "0.8rem",
           }}
         >
-          Product · Analytics · Strategy
+          Delivery · Product · Data
         </motion.p>
 
         <div style={{ marginBottom: "0.15rem" }}>
@@ -135,8 +135,8 @@ export default function Hero() {
             margin: 0,
           }}
         >
-          Product Analyst using user behavior, funnels, and data to shape product
-          decisions and measurable business impact.
+          Technical Project Manager bridging delivery coordination, stakeholder alignment,
+          and data-driven decision-making to keep complex products on track and shipping.
         </motion.p>
       </div>
 

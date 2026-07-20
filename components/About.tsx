@@ -4,30 +4,29 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const skills = [
-  { name: "SQL", category: "core" },
-  { name: "Python", category: "core" },
-  { name: "Amplitude", category: "analytics" },
-  { name: "Mixpanel", category: "analytics" },
-  { name: "GA4", category: "analytics" },
-  { name: "Power BI", category: "viz" },
-  { name: "Tableau", category: "viz" },
-  { name: "Funnel Analysis", category: "method" },
-  { name: "Cohort Analysis", category: "method" },
-  { name: "A/B Testing", category: "method" },
-  { name: "Retention Analysis", category: "method" },
-  { name: "Feature Adoption", category: "method" },
-  { name: "Event Tracking", category: "method" },
-  { name: "KPI Development", category: "method" },
-  { name: "Agile", category: "process" },
-  { name: "Jira", category: "process" },
+  { name: "Jira", category: "delivery" },
+  { name: "Monday.com", category: "delivery" },
+  { name: "Confluence", category: "delivery" },
+  { name: "Agile / Scrum", category: "delivery" },
+  { name: "RAID Logs", category: "delivery" },
+  { name: "SQL", category: "data" },
+  { name: "Power BI", category: "data" },
+  { name: "Tableau", category: "data" },
+  { name: "Python", category: "data" },
+  { name: "BRD / FRD", category: "analysis" },
+  { name: "User Stories", category: "analysis" },
+  { name: "UAT", category: "analysis" },
+  { name: "Stakeholder Management", category: "analysis" },
+  { name: "AWS", category: "tech" },
+  { name: "Snowflake", category: "tech" },
+  { name: "Vanta", category: "tech" },
 ];
 
 const categoryColors: Record<string, string> = {
-  core: "#2563eb",
-  analytics: "#7c3aed",
-  viz: "#0891b2",
-  method: "#059669",
-  process: "#d97706",
+  delivery: "#2563eb",
+  data: "#7c3aed",
+  analysis: "#0891b2",
+  tech: "#059669",
 };
 
 export default function About() {
@@ -131,7 +130,7 @@ export default function About() {
       fontWeight: 600,
     }}
   >
-    From behavior to decisions
+    From planning to delivery
   </p>
 
   <h3
@@ -145,7 +144,7 @@ export default function About() {
       maxWidth: "760px",
     }}
   >
-    I work at the intersection of data, product thinking, and user behavior.
+    I work at the intersection of delivery, data, and cross-functional coordination.
   </h3>
 
   <p
@@ -157,9 +156,10 @@ export default function About() {
       maxWidth: "760px",
     }}
   >
-    My focus is on understanding how people move through a product,
-    where friction shows up, and which signals actually matter for
-    better decisions.
+    My focus is on keeping complex projects on track — translating
+    requirements into structured backlogs, surfacing risks before they
+    become blockers, and making sure every stakeholder has the
+    visibility they need.
   </p>
 
   <p
@@ -171,10 +171,10 @@ export default function About() {
       maxWidth: "760px",
     }}
   >
-    Whether I am looking at funnel drop off, retention patterns, or
-    feature engagement, I try to turn messy behavior into clear
-    direction teams can act on across conversion, adoption, and
-    product performance.
+    Whether I am coordinating cloud infrastructure workstreams,
+    building dashboards for decision-making, or running UAT cycles,
+    I bring structure and clarity to the work so teams can execute
+    with confidence.
   </p>
 </div>
 
@@ -247,9 +247,9 @@ export default function About() {
           }}
         >
           {[
-            "Decisions over dashboards",
-            "Behavior over assumptions",
+            "Delivery over documentation",
             "Clarity over complexity",
+            "Data-backed decisions",
           ].map((item, index) => (
             <motion.div
               key={index}

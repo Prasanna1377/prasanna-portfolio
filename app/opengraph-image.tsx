@@ -37,7 +37,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            Open to Work · Product Analyst
+            Open to Work · Technical Project Manager
           </span>
         </div>
 
@@ -67,8 +67,8 @@ export default function Image() {
               margin: 0,
             }}
           >
-            Turning user behavior, funnels, and data into clear product
-            decisions and measurable business impact.
+            Bridging delivery coordination, stakeholder alignment, and
+            data-driven decision-making to keep complex products shipping.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function Image() {
           }}
         >
           <div style={{ display: "flex", gap: "12px" }}>
-            {["SQL", "Python", "Amplitude", "A/B Testing"].map((tag) => (
+            {["Jira", "Agile", "SQL", "Power BI"].map((tag) => (
               <span
                 key={tag}
                 style={{

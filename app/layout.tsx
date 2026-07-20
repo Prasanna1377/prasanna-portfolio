@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://prasannapingale.vercel.app"),
-  title: "Prasanna Pingale — Product Analyst | Data & Funnels",
+  title: "Prasanna Pingale — Technical Project Manager | Product & Delivery",
   description:
-    "Product Analyst with 3+ years turning user behavior, funnels, and experimentation data into clear decisions for product teams.",
+    "Technical Project Manager with 3+ years across Agile delivery, stakeholder coordination, and data-driven product management.",
   openGraph: {
-    title: "Prasanna Pingale — Product Analyst | Data & Funnels",
+    title: "Prasanna Pingale — Technical Project Manager | Product & Delivery",
     description:
-      "Product Analyst with 3+ years turning user behavior, funnels, and experimentation data into clear decisions for product teams.",
+      "Technical Project Manager with 3+ years across Agile delivery, stakeholder coordination, and data-driven product management.",
     url: "https://prasannapingale.vercel.app",
     siteName: "Prasanna Pingale",
     type: "website",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prasanna Pingale — Product Analyst | Data & Funnels",
+    title: "Prasanna Pingale — Technical Project Manager | Product & Delivery",
     description:
-      "Product Analyst with 3+ years turning user behavior, funnels, and experimentation data into clear decisions for product teams.",
+      "Technical Project Manager with 3+ years across Agile delivery, stakeholder coordination, and data-driven product management.",
   },
 };
 
