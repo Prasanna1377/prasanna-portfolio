@@ -82,7 +82,7 @@ const jobs = [
     location: "Mumbai, Maharashtra, India",
     impact:
       "Brought structure to manufacturing operations data, replacing fragmented spreadsheets with consistent reporting across production, inventory, and finance.",
-    metric: "3 teams aligned",
+    metric: "4 reports automated",
     bullets: [
       "Integrated production, inventory, and WIP data from BaaN ERP into Power BI reports, replacing fragmented spreadsheets with a consistent view of manufacturing operations.",
       "Reconciled ERP records with production, inventory, and finance teams, resolving stock and work-order mismatches before monthly management reviews.",
