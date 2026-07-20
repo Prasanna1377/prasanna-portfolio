@@ -117,7 +117,7 @@ export default function Contact() {
               <motion.button
                 onClick={(e) => {
                   e.preventDefault();
-                  navigator.clipboard.writeText("prasannapingale471@gmail.com");
+                  navigator.clipboard.writeText("pingale.pr@gmail.com");
                   setCopied(true);
                   setTimeout(() => setCopied(false), 2000);
                 }}
@@ -154,7 +154,7 @@ export default function Contact() {
                     fontFamily: copied ? "var(--font-geist-mono)" : "inherit",
                   }}
                 >
-                  {copied ? "Copied to clipboard ✔" : "prasannapingale471@gmail.com"}
+                  {copied ? "Copied to clipboard ✔" : "pingale.pr@gmail.com"}
                 </span>
               </motion.button>
 
