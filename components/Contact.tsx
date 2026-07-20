@@ -269,7 +269,7 @@ export default function Contact() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               {[
-                ["Current Location", "Massachusetts, United States"],
+                ["Current Location", "Mumbai, Maharashtra, India"],
                 [
                   "Target Roles",
                   "Technical Project Manager, Project Manager, Business Analyst",
