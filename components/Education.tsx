@@ -10,7 +10,7 @@ const education = [
     year: "2025",
     location: "Boston, Massachusetts",
     tag: "Master's",
-    detail: "Focused on analytics, systems, and data driven product thinking.",
+    detail: "Focused on Business Analysis, Agile, Data Science Engineering Methods, and Data Management.",
   },
   {
     school: "University of Mumbai",
@@ -19,7 +19,7 @@ const education = [
     location: "Mumbai, India",
     tag: "Bachelor's",
     detail:
-      "Built a strong foundation in engineering, problem solving, and technical systems.",
+      "Built a foundation in Computer Engineering with a focus on Machine Learning, AI, and Project Management.",
   },
 ];
 

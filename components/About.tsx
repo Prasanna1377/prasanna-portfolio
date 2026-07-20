@@ -190,7 +190,7 @@ export default function About() {
                 fontWeight: 600,
               }}
             >
-              Stack
+              Toolkit
             </p>
 
             <div
